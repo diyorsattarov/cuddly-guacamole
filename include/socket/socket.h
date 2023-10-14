@@ -1,13 +1,21 @@
 #ifndef SOCKET_H
-#include <sys/socket.h>
-#include <netinet/in.h>
-#include <unistd.h>
-#include <arpa/inet.h>
+#define SOCKET_H
+
 #include <iostream>
 #include <string>
 #include <ostream>
 #include <thread>
 #include <chrono>
+
+#ifdef _WIN32 // Windows-specific includes
+#include <winsock2.h>
+#pragma comment(lib, "ws2_32.lib") // Link with the Winsock library
+#else // Linux-specific includes
+#include <sys/socket.h>
+#include <netinet/in.h>
+#include <unistd.h>
+#include <arpa/inet.h>
+#endif
 
 class Socket {
 public:
@@ -24,4 +32,5 @@ public:
 
     void close();
 };
-#endif //SOCKET_H
+
+#endif // SOCKET_H

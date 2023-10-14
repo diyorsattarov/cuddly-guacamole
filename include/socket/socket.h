@@ -3,12 +3,10 @@
 
 #include <iostream>
 #include <string>
-#include <ostream>
-#include <thread>
-#include <chrono>
 
 #ifdef _WIN32 // Windows-specific includes
 #include <winsock2.h>
+#include <Ws2tcpip.h>
 #pragma comment(lib, "ws2_32.lib") // Link with the Winsock library
 #else // Linux-specific includes
 #include <sys/socket.h>

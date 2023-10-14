@@ -1,6 +1,7 @@
 #include <gtest/gtest.h>
 #include <socket/socket.h>
-
+#include <ostream>
+#include <thread>
 // Define your test fixture
 class SocketFixture : public ::testing::Test {
 protected:

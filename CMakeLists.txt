@@ -5,10 +5,14 @@ set(PROJECT_NAME remote-admin-tool)
 project(${PROJECT_NAME})
 
 add_subdirectory(src)
-
 include_directories(include)
 
+set(SOURCES
+    src/socket/socket.cpp
+)
+
 add_executable(tests
+    ${SOURCES}  
     tests/socket/test_socket.cpp
 )
 

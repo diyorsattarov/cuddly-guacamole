@@ -3,10 +3,13 @@
 #include <netinet/in.h>
 #include <unistd.h>
 #include <arpa/inet.h>
+#include <iostream>
+#include <string>
+#include <ostream>
+#include <thread>
+#include <chrono>
 
 class Socket {
-private:
-    int socket_fd;
 public:
     Socket();
     ~Socket();
@@ -16,6 +19,7 @@ public:
     bool listen();
     
     int accept();
+    int socket_fd;
     bool connect(const std::string& ipAddress, int port);
 
     void close();
